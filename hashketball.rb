@@ -195,7 +195,6 @@ def player_stats(player_name)
 playerdata = nil 
  game_hash.collect do |team, stats|
   stats[:players].collect do |player, data|
-
     if player == player_name
       playerdata = data
     end 
@@ -207,13 +206,13 @@ end
 
 
 def big_shoe_rebounds
-  biggest = 0
+  big_shoe = 0
   rebounds = 0
   game_hash.each do |team, team_data|
     team_data[:players].each do |player|
       size = player[:shoe]
-      if size > biggest
-        biggest = size
+      if size > big_shoe
+        big_shoe = size
         rebounds = player[:rebounds]
       end
     end
